@@ -1,0 +1,29 @@
+;(function() {
+
+	var divElement = d3.select('#chartDiv');
+	
+	var svg = divElement.append('svg')
+		.attr("height", 800)
+		.attr("width", 800);
+		
+	var colorScale = d3.scale.linear()
+		.domain([0,30])
+		.range(["red", "green", "blue"]);
+		
+	var clickFunction = function(d,i){
+		console.log(this);
+		d3.select(this).attr('fill', "yellow");
+	};
+		
+	var dataArray = [10, 20, 30, 15];	
+	svg.selectAll(".dataThings")
+		.data(dataArray)
+		.enter().append('circle')
+			.attr("cx", function(d,i){return (i+1)*40;})
+			.attr("cy", function(d,i){return (i+1)*40;})
+			.attr("r", function(d,i){return d;})
+			.attr("fill", function(d){return colorScale(d);})
+			.on("click", clickFunction);
+	
+	console.log(divElement);
+})();
