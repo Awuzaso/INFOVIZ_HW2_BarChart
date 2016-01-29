@@ -14,3 +14,6 @@ iOS: Open a terminal (Command+space to bring up spotlight. Type "Terminal" and p
 4) And start the HTTP server: "http-server path" without quotes, where "path" is the path to the root folder with your html (index.html). Your folder must have some files before it works.
 
 5) Open http://localhost:8080/ in your browser.
+
+
+Comment Comment
